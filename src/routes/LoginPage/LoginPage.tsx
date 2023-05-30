@@ -2,6 +2,7 @@ import React from "react";
 import googleLogo from "../../assets/googleLogo.png";
 import githubLogo from "../../assets/githubImage.png";
 import twitterLogo from "../../assets/twitterLogo.png";
+import twitchLogo from "../../assets/twitchLogo.png";
 import styles from "./LoginPage.module.scss";
 
 const LoginPage = () => {
@@ -14,6 +15,9 @@ const LoginPage = () => {
   };
   const twitterLogin = () => {
     window.open("http://localhost:4000/auth/twitter", "_self");
+  };
+  const twitchLogin = () => {
+    window.open("http://localhost:4000/auth/twitch", "_self");
   };
 
   return (
@@ -38,6 +42,13 @@ const LoginPage = () => {
           >
             <img src={twitterLogo} alt="Twitter Logo" />
             <p>Login with Twitter</p>
+          </div>
+          <div
+            className={`${styles.googleContainer} ${styles.twitchContainer}`}
+            onClick={twitchLogin}
+          >
+            <img src={twitchLogo} alt="Twitch Logo" />
+            <p>Login with Twitch</p>
           </div>
         </div>
       </div>
