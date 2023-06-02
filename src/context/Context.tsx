@@ -11,6 +11,7 @@ const Context = (props: any) => {
     axios
       .get("http://localhost:4000/getuser", { withCredentials: true })
       .then((res: AxiosResponse) => {
+        console.log("res: ", res);
         if (res.data) {
           setUserObject(res.data);
         }
