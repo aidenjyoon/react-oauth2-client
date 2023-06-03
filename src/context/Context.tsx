@@ -9,13 +9,18 @@ const Context = (props: any) => {
   // get user's data
   useEffect(() => {
     axios
-      .get("http://localhost:4000/getuser", { withCredentials: true })
+      .get("http://localhost:4000/getuser", { withCredentials: true }) // withCredentials makes sure the receiver is aware of the cookies in the browser
       .then((res: AxiosResponse) => {
-        console.log("res: ", res);
         if (res.data) {
+          // if get was successful
+          console.log("res: ", res);
+          console.log("res.data: ", res.data);
+
           setUserObject(res.data);
         }
       });
+
+    console.log("GET by axios: ", userObject);
   }, []);
 
   return (
