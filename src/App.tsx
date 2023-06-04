@@ -4,10 +4,10 @@ import "./App.css";
 import HomePage from "./routes/HomePage/HomePage";
 import LoginPage from "./routes/LoginPage/LoginPage";
 import NavBar from "./routes/NavBar/NavBar";
-import { myContext } from "./context/Context";
+import { userContext } from "./context/Context";
 
 function App() {
-  const userObject = useContext(myContext);
+  const userObject = useContext(userContext);
   console.log("userObject: ", userObject);
   return (
     <>

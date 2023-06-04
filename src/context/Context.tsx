@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 
-export const myContext = createContext({});
+export const userContext = createContext({});
 
 const Context = (props: any) => {
   const [userObject, setUserObject] = useState<any>();
@@ -24,7 +24,9 @@ const Context = (props: any) => {
   }, []);
 
   return (
-    <myContext.Provider value={userObject}>{props.children}</myContext.Provider>
+    <userContext.Provider value={userObject}>
+      {props.children}
+    </userContext.Provider>
   );
 };
 
