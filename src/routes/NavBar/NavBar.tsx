@@ -5,11 +5,13 @@ import axios from "axios";
 
 const NavBar = () => {
   const logoutHandler = () => {
-    axios.get("http://localhost:4000/logout").then((res) => {
-      if (res.data) {
-        window.location.href = "/";
-      }
-    });
+    axios
+      .get("http://localhost:4000/logout", { withCredentials: true }) // withCredentials allows express server to access my cookies to know which session to logout.
+      .then((res) => {
+        if (res.data) {
+          window.location.href = "/";
+        }
+      });
   };
   return (
     <>
