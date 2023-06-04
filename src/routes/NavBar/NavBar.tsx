@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./NavBar.module.scss";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { userContext } from "../../context/Context";
+import { IUser } from "../../types/userContextTypes";
 
 const NavBar = () => {
+  const userObject = useContext(userContext) as IUser;
+
   const logoutHandler = () => {
     axios
-      .get("http://localhost:4000/logout", { withCredentials: true }) // withCredentials allows express server to access my cookies to know which session to logout.
-      .then((res) => {
+      .get("http://localhost:4000/auth/logout", { withCredentials: true }) // withCredentials allows express server to access my cookies to know which session to logout.
+      .then((res: AxiosResponse) => {
         if (res.data) {
           window.location.href = "/";
         }
@@ -20,10 +24,13 @@ const NavBar = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li onClick={logoutHandler}>Logout</li>
+          {userObject ? (
+            <li onClick={logoutHandler}>Logout</li>
+          ) : (
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          )}
         </ul>
       </div>
     </>

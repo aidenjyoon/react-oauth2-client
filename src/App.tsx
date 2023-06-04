@@ -15,7 +15,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
+          {userObject ? null : <Route path="/login" element={<LoginPage />} />}
         </Routes>
       </BrowserRouter>
     </>
