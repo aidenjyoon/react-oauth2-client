@@ -8,16 +8,16 @@ import styles from "./LoginPage.module.scss";
 const LoginPage = () => {
   // redirects to google sign in with backend
   const googleLogin = () => {
-    window.open("http://localhost:4000/auth/google", "_self");
+    window.open(process.env.URL_BACKEND + "/auth/google", "_self");
   };
   const githubLogin = () => {
-    window.open("http://localhost:4000/auth/github", "_self");
+    window.open(process.env.URL_BACKEND + "/auth/github", "_self");
   };
   const twitterLogin = () => {
-    window.open("http://localhost:4000/auth/twitter", "_self");
+    window.open(process.env.URL_BACKEND + "/auth/twitter", "_self");
   };
   const twitchLogin = () => {
-    window.open("http://localhost:4000/auth/twitch", "_self");
+    window.open(process.env.URL_BACKEND + "/auth/twitch", "_self");
   };
 
   return (
