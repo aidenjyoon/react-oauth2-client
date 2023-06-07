@@ -10,7 +10,10 @@ const NavBar = () => {
 
   const logoutHandler = () => {
     axios
-      .get(process.env.URL_BACKEND + "/auth/logout", { withCredentials: true }) // withCredentials allows express server to access my cookies to know which session to logout.
+      .get(
+        "https://react-oauth2-backend-production.up.railway.app/auth/logout",
+        { withCredentials: true }
+      ) // withCredentials allows express server to access my cookies to know which session to logout.
       .then((res: AxiosResponse) => {
         if (res.data) {
           window.location.href = "/";

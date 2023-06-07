@@ -9,7 +9,9 @@ const Context = (props: any) => {
   // get user's data
   useEffect(() => {
     axios
-      .get(process.env.URL_BACKEND + "/getuser", { withCredentials: true }) // withCredentials makes sure the receiver is aware of the cookies in the browser
+      .get("https://react-oauth2-backend-production.up.railway.app/getuser", {
+        withCredentials: true,
+      }) // withCredentials makes sure the receiver is aware of the cookies in the browser
       .then((res: AxiosResponse) => {
         if (res.data) {
           // if get was successful

@@ -8,16 +8,28 @@ import styles from "./LoginPage.module.scss";
 const LoginPage = () => {
   // redirects to google sign in with backend
   const googleLogin = () => {
-    window.open(process.env.URL_BACKEND + "/auth/google", "_self");
+    window.open(
+      "https://react-oauth2-backend-production.up.railway.app/auth/google",
+      "_self"
+    );
   };
   const githubLogin = () => {
-    window.open(process.env.URL_BACKEND + "/auth/github", "_self");
+    window.open(
+      "https://react-oauth2-backend-production.up.railway.app/auth/github",
+      "_self"
+    );
   };
   const twitterLogin = () => {
-    window.open(process.env.URL_BACKEND + "/auth/twitter", "_self");
+    window.open(
+      "https://react-oauth2-backend-production.up.railway.app/auth/twitter",
+      "_self"
+    );
   };
   const twitchLogin = () => {
-    window.open(process.env.URL_BACKEND + "/auth/twitch", "_self");
+    window.open(
+      "https://react-oauth2-backend-production.up.railway.app/auth/twitch",
+      "_self"
+    );
   };
 
   return (
