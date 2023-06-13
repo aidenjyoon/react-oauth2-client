@@ -8,9 +8,9 @@ const HomePage = () => {
   return (
     <>
       {context ? (
-        <div>Welcome Back {context.username}!</div>
+        <h1>Welcome Back {context.username}!</h1>
       ) : (
-        <div>Welcome To My Website!</div>
+        <h1>Welcome To My Website!</h1>
       )}
     </>
   );
