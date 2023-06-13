@@ -23,7 +23,7 @@ const Context = (props: any) => {
       });
 
     console.log("GET by axios: ", userObject);
-  }, []);
+  }, [userObject]);
 
   return (
     <userContext.Provider value={userObject}>
