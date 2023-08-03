@@ -14,15 +14,15 @@ const Context = (props: any) => {
       }) // withCredentials makes sure the receiver is aware of the cookies in the browser
       .then((res: AxiosResponse) => {
         if (res.data) {
-          // if get was successful
-          console.log("res: ", res);
-          console.log("res.data: ", res.data);
+          // // if get was successful
+          // console.log("res: ", res);
+          // console.log("res.data: ", res.data);
 
           setUserObject(res.data);
         }
       });
 
-    console.log("GET by axios: ", userObject);
+    // console.log("GET by axios: ", userObject);
   }, [userObject]);
 
   return (

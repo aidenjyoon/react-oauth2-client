@@ -8,7 +8,8 @@ import { userContext } from "./context/Context";
 
 function App() {
   const userObject = useContext(userContext);
-  console.log("userObject: ", userObject);
+  // console.log("userObject: ", userObject);
+
   return (
     <>
       <BrowserRouter>
