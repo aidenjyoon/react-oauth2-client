@@ -9,7 +9,7 @@ const Context = (props: any) => {
   // get user's data
   useEffect(() => {
     axios
-      .get("https://react-oauth2-backend-production.up.railway.app/getuser", {
+      .get("https://react-20-backend.onrender.com/getuser", {
         withCredentials: true,
       }) // withCredentials makes sure the receiver is aware of the cookies in the browser
       .then((res: AxiosResponse) => {
